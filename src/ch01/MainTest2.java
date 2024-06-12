@@ -8,31 +8,34 @@ public class MainTest2 {
 		String str2 = "20.5";
 		String str3 = "true";
 
-		System.out.println(str2 + 100); // 문자열("20.5") + 숫자
-		System.out.println(str2 + "A"); // 문자열("20.5") + 문자
+		System.out.println(str2 + 100); // 문자열("20.5") + 숫자 => 20.5100
+		System.out.println(str2 + "A"); // 문자열("20.5") + 문자 => 20.5A
 
 		// str1 <-- 10
 		// 문자열의 데이터 타입을 정수값으로 변경하는 방법
+//		int n1 = Integer.parseInt(str1); 
+//		System.out.println(n1); // => 10
+		
+		// String str1 = "10A";
+		// 정수값으로 얼마나 변경해야 하는지 알 수 없기 때문에 NumberFormatException 발생
+		// 예외 처리 하기
+		
 		try {
 			int n1 = Integer.parseInt(str1);
 			System.out.println(n1 + 100);
 		} catch (Exception e) {
-			System.out.println("잘못된 입력 값입니다.");
+			System.out.println("잘못된 입력 값입니다."); // => 출력됨
 		}
 
-		// String str1 = "10A";
-		// 정수값으로 얼마나 변경해야 하는지 알 수 없기 때문에 NumberFormatException 발생
-		// 예외 처리 하기
-
-		// str 2 --> double --> 8byte
+		// str2 --> double --> 8byte
 		double d = Double.parseDouble(str2);
-		System.out.println(d);
+		System.out.println(d); // => 20.5
 
-		// str3 --> boolean(1byte) -->
+		// str3 --> boolean --> 1byte
 		boolean b = Boolean.parseBoolean(str3);
-		System.out.println(b);
+		System.out.println(b); // => true
 
-		// 반대로 -- int 값을 --> String 데이터 타입으로 변환하고 싶다면
+		// 반대로 int 값을 --> String 데이터 타입으로 변환하고 싶다면
 		int number = 10000;
 		String numberStr = String.valueOf(number);
 		System.out.println(numberStr);
